@@ -1,0 +1,50 @@
+version: '3.3'
+services:
+  firerisk:
+    build: 
+      context: ./firerisk
+      dockerfile: Dockerfile
+    environment:
+      - MET_CLIENT_ID=${MET_CLIENT_ID}
+      - MET_CLIENT_SECRET=${MET_CLIENT_SECRET}
+    restart: always
+    ports:
+      - 8000:8000
+    command: ["poetry", "run", "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+    networks:
+      - firerisk-network
+
+  postgres:
+    image: postgres:16.2-bullseye
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: admin
+      POSTGRES_DB: fireriskdb
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./postgres-frcm/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - firerisk-network
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8888:8080
+    networks:
+    - firerisk-network
+
+  cron:
+    build: 
+      context: ./postgres-frcm/
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - firerisk-network
+
+networks:
+  firerisk-network:
+    driver: bridge
