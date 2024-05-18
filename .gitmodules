@@ -1,0 +1,6 @@
+[submodule "firerisk"]
+	path = firerisk
+	url = https://github.com/ADA502-FireGuard/dynamic-frcm
+[submodule "postgres"]
+	path = postgres
+	url = https://github.com/ADA502-FireGuard/postgres-frcm

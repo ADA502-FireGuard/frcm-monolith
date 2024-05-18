@@ -25,7 +25,7 @@ services:
       - 5432:5432
     volumes:
       - ./data:/var/lib/postgresql/data
-      - ./postgres-frcm/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
     networks:
       - firerisk-network
 
@@ -39,7 +39,7 @@ services:
 
   cron:
     build: 
-      context: ./postgres-frcm/
+      context: ./postgres/
       dockerfile: Dockerfile
     restart: always
     networks:
