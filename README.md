@@ -6,7 +6,10 @@ The FireGuard Cloud Service v.0.1.0 for the ADA502 course.
 
 ![firerisk drawio](https://github.com/ADA502-FireGuard/dynamic-frcm/assets/4137667/55bc8db2-eecd-4cf1-8f12-f2505d1a3d48)
 
-The project git repository is publicly available on [Github](https://github.com/ADA502-FireGuard/dynamic-frcm). The Docker repository can be found at [DockerHub](https://hub.docker.com/r/alexbringh/fireguard-v-0-1-0/).
+The project git repository is publicly available on [Github](https://github.com/ADA502-FireGuard/frcm-monolith). 
+The project consists of two separately developed microservices. These services can be found in their separate git reposiories, the main FireRisk API service [dynamic-frcm](https://github.com/ADA502-FireGuard/dynamic-frcm) and the database service [postgres-frcm](https://github.com/ADA502-FireGuard/postgres-frcm).
+
+The Docker repository can be found at [DockerHub](https://hub.docker.com/r/alexbringh/fireguard-v-0-1-0/).
 
 This FireGuard project .... database .... testing .... docker/containerization/orchestration/deployment ... CI/CD ... RESTful degree (level) ... Architecture?
 
@@ -112,7 +115,7 @@ You can exit anytime by pressing `CTRL+C`
 
 You will need to do the equivalent for `postgres-frcm` repository and set up a bridged network to get database functionality.
 
-#TODO nevn noko om Postgres og Database, 
+# nevn noko om Postgres og Database, 
 
 #### Via DockerHub
 
