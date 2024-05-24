@@ -11,7 +11,7 @@ The project consists of two separately developed microservices. These services c
 
 The Docker repository for dynamic-frcm can be found at [DockerHub](https://hub.docker.com/r/alexbringh/fireguard-v-0-1-0/).
 
-We currently provide these security measures (HTTPS) and have begun implementing authentication through keycloak....
+We currently provide communication to the API through HTTPS as a security measure, and have begun implementing authentication through keycloak.
 
 The Fireguard service is implemented as multiple micro services, offloading tasks such as encryption to the keyclock service, the retrieval of coordinates to Kartverket, the retrieval of weather data to Frost, the storage of results to a separate database service and the actual calculation to the Fireguard API service. Whilst the service strives to offload each task as a microservice, it has become necessary to break with the ideal idea of a microservice architecture by having the Fireguard API service perform most of the coordination of tasks as well, not just limiting it to the calculation alone.
 
