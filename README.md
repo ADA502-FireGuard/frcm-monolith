@@ -113,8 +113,6 @@ You can exit anytime by pressing `CTRL+C`
 
 You will need to do the equivalent for `postgres-frcm` repository and set up a bridged network to get database functionality.
 
-# nevn noko om Postgres og Database, 
-
 #### Via DockerHub
 
 If you would rather run the microservice directly from `DockerHub` through `Docker Desktop`. Simply enter `alexbringh/fireguard-v-0-1-0:latest` into the top search bar and pull the latest image.
