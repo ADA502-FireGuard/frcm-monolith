@@ -1,4 +1,4 @@
-# FireGuard - Group 5
+# FireGuard - Group 5 
 
 The FireGuard Cloud Service v.0.1.0 for the ADA502 course.
 
