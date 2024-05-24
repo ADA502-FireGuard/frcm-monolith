@@ -9,9 +9,7 @@ The FireGuard Cloud Service v.0.1.0 for the ADA502 course.
 The project git repository is publicly available on [Github](https://github.com/ADA502-FireGuard/frcm-monolith). 
 The project consists of two separately developed microservices. These services can be found in their separate git reposiories, the main FireRisk API service [dynamic-frcm](https://github.com/ADA502-FireGuard/dynamic-frcm) and the database service [postgres-frcm](https://github.com/ADA502-FireGuard/postgres-frcm).
 
-The Docker repository can be found at [DockerHub](https://hub.docker.com/r/alexbringh/fireguard-v-0-1-0/).
-
-This FireGuard project .... database .... testing .... docker/containerization/orchestration/deployment ... CI/CD ... RESTful degree (level) ... Architecture?
+The Docker repository for dynamic-frcm can be found at [DockerHub](https://hub.docker.com/r/alexbringh/fireguard-v-0-1-0/).
 
 We currently provide these security measures (HTTPS) and have begun implementing authentication through keycloak....
 
