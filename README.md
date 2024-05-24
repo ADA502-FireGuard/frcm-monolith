@@ -12,9 +12,9 @@ This FireGuard project .... database .... testing .... docker/containerization/o
 
 We currently provide these security measures (HTTPS) and have begun implementing authentication through keycloak....
 
-#TODO: her begynner alex å skriva om architecture
+The Fireguard service is implemented as multiple micro services, offloading tasks such as encryption to the keyclock service, the retrieval of coordinates to Kartverket, the retrieval of weather data to Frost, the storage of results to a separate database service and the actual calculation to the Fireguard API service. Whilst the service strives to offload each task as a microservice, it has become necessary to break with the ideal idea of a microservice architecture by having the Fireguard API service perform most of the coordination of tasks as well, not just limiting it to the calculation alone.
 
-#TODO: her begynner alex å skrive om REST api. Par setningar.
+The service offers interfacing with clients as a RestAPI, primarily offering GET requests and some PUT requests that can be easily used by a client directly or a middleware service. 
 
 
 ## Getting started
@@ -65,7 +65,7 @@ You can now access the Fireguard API service at `https://127.0.0.1:8000`. The da
 
 #### Running tests
 
-There's also the capability of running unit tests on the FireGuard software. Some unit tests are already included. Assuming you're using the monorepo, you can run the tests with the following command
+Our repository includes a comprehensive suite of tests covering client interactions with geocoding and meteorological data, core computations, data models, fire risk calculations, data extraction modules, API integrations, logical processing, and weather data handling. These tests ensure the robustness and reliability of our software. You can run all tests using the provided Docker command.
 
 ```bash
 docker-compose run firerisk poetry run pytest
@@ -196,3 +196,10 @@ postcode:  int - The four-digit postcode for the area. Make sure that the postco
 days:      float - The number of days to be calculated for.
 ```
 
+## Following Versions
+
+In the upcoming releases, our emphasis will shift towards a robust continuous integration process. Our new objectives for the product include accommodating multiple data points for any given feature and expanding our offerings to encompass additional functionalities like postal area specification, enhanced authentication, and data subscriptions for specific regions.
+
+To safeguard against errors and potential security vulnerabilities due to user input, we will be enhancing our input validation measures. Furthermore, there's a planned incorporation of consistently timed automated test routines, such as combined smoke and security testing, to ensure the software's integrity.
+
+We will be integrating a suite of comprehensive tests -- including integration, functional, performance, load, stress, security, and usability assessments. These tests will support our regression strategy and acceptance criteria to drive quality assurance. Moreover, as the project evolves, the role of continuous deployment is becoming increasingly vital. Consequently, we are placing greater emphasis on code reliability and efficient testing protocols, as the complexity and resource demands for manual testing grow, underscoring the need for exceptionally thorough testing practices. 
